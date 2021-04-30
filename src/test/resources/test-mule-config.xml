@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:oci="http://www.mulesoft.org/schema/mule/oci"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/oci http://www.mulesoft.org/schema/mule/oci/current/mule-oci.xsd">
+
+    <oci:config name="config" configId="configId">
+        <oci:connection requiredParameter="aValue" />
+    </oci:config>
+
+    <flow name="sayHiFlow">
+        <oci:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <oci:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>
